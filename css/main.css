@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+section > h3{display: none;}
+
+@media (min-width:1025px){
+article{
+  width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0px 50px;
+}
+article > h3{
+  font-size: 40px;
+  font-weight: 700;
+  padding-bottom: 30px;
+}
+/* 슬라이드 */
+.swiper-slide {
+  flex-shrink: 0;
+  width: auto; overflow: hidden;
+  height: 800px;
+  position: relative;
+  transition-property: transform;
+}
+.c-wrap{
+  width: 1200px; height: 20px;
+  margin: 0 auto;
+  position: relative; z-index: 101;
+}
+.swiper-pagination-progressbar-fill{
+  color: #83A666;
+}
+.swiper-btn{
+  position: absolute;
+  bottom: 155px; left: 450px;
+  z-index: 99;
+}
+#c-btn{width: 35px;}
+
+/* slide 배경 서식 */
+.m-slide-bg{
+  width: 100%; min-width: 1940px; height: 800px;
+  object-fit: cover; position: absolute;
+  top:0px; z-index: -100;
+}
+
+.item-wrap{
+  width: 1200px; height: 100%;
+  margin: 0 auto;
+  position: relative; top: 400px;
+}
+.item-wrap p{
+  font-size: 24px; line-height: 140%;
+}
+.item-wrap p:nth-child(2){
+  font-size: 48px; font-weight: 800; line-height: 60px;
+}
+.item-wrap p:nth-child(2) span{
+  font-size: 24px; font-weight: 400;
+}
+
+/* 시드물 스토리 */
+#story01{
+  display: flex;
+  gap: 0px 40px;
+}
+#story figure *{transition: .3s ease-in-out;}
+#story01 figure{
+  width: 580px; height: 645px;
+  overflow: hidden;
+  position: relative;
+}
+#story figure > img{
+  width: 100%; height: 645px;
+  object-fit: cover;
+}
+#story figure > figcaption{
+  width: 580px; height: 220px;
+  position: absolute; bottom: 0px;
+}
+#story figure > figcaption > p:first-child{
+  font-size: 30px;
+  color: #fff;
+  padding: 40px 40px 20px;
+}
+#story figure > figcaption > p{
+  font-size: 16px; line-height: 24px;
+  color: #fff;
+  padding: 0px 40px;
+}
+#story figure:first-of-type > figcaption{
+  background: rgba(131, 166, 102, .8);
+}
+#story figure:last-of-type > figcaption{
+  background: rgba(64, 53, 44, .7);
+}
+#story .m-fig-hover{
+  width: 106px; height: 106px;
+  display: block;
+  position: absolute;
+  top: 150px; z-index: 999;
+  left: 50%; transform: translateX(-53px);
+  opacity: 0;
+}
+
+/* 마우스 오버 */
+#story01 figure:hover img, #story01 figure:hover figcaption{
+  filter:brightness(.6);
+}
+#story01 figure:hover .m-fig-hover {
+  opacity: 1;
+  filter:brightness(1);
+}
+
+/* newsroom */
+#newsroom{width: 1200px;}
+#newsroom *{transition: 0.3s;}
+
+#newsroom01{
+  width: 100%;
+  display: grid;
+  gap: 50px 30px;
+  grid-template-columns: repeat(3, auto);
+}
+#newsroom01 figure{
+  width: 100%;
+  position: relative;
+}
+#newsroom figure img{
+  width: 100%; height: 378px;
+  object-fit: cover;
+}
+#newsroom figcaption p:first-child > span{
+  display: block;
+  font-size: 16px; font-weight: 400;
+  line-height: 30px;
+}
+#newsroom figcaption p:first-child{
+  font-size: 30px;
+  line-height: 30px; font-weight: 700;
+  padding-top: 25px;
+}
+#newsroom figcaption p{
+  line-height: 24px;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  width:100%;
+  height:75px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#newsroom01 figure:hover > img{
+  filter:brightness(.6);
+}
+
+#newsroom01 figure:hover .m-fig-hover{
+  opacity: 1;
+}
+
+#newsroom .m-fig-hover{
+  width: 100px; height: 100px;
+  display: block;
+  position: absolute;
+  top: 140px; z-index: 101;
+  left: 50%; transform: translateX(-53px);
+  opacity: 0;
+}
+
+/* 고객센터 */
+.m-call{
+  display: grid;
+  width: 1200px; height:500px;
+  grid-template-columns: 3fr;
+  gap: 36px;
+}
+.m-call > div:first-child{ 
+  width: 100%; height: 500px;
+  grid-column: 1 / 2;
+	grid-row: 1 / 1;
+}
+.m-call > div:last-child{
+  width: 320px; height: 500px;
+  position: relative;
+  grid-column: 2 / 3;
+	grid-row: 1 / 1;
+}
+.m-call-info{
+  width: 100%;
+  position: absolute; 
+  bottom: 0px;}
+.m-call > div:last-child p:first-child{
+  font-size: 30px; height: auto;
+  line-height: 36px;
+  padding-bottom: 30px;
+}
+.m-call > div:last-child p:first-child > span{
+  font-weight: 800;
+}
+.m-call > div:last-child p:nth-child(2){
+  font-size: 16px; line-height: 160%;
+  height: auto; padding-bottom: 56px;
+}
+
+.m-call > div a{
+  display: block;
+  width: 100%; height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid
+}
+.m-call img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* 1024 PC */
+@media (min-width:1024px) and (max-width:1199px) {
+  article, .c-wrap, .item-wrap{
+    width: 100%;
+    margin: 0 2em;
+  }
+  .m-slide-bg{
+    left: -400px;
+    object-fit: cover;
+  }
+}
+
+}
