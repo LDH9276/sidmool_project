@@ -1,5 +1,6 @@
+$(document).ready(function(){
 // 슬라이더 선언
-let swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".m-banner-swiper", {
   pagination: {
     el: ".swiper-pagination",
     type: "progressbar",
@@ -29,20 +30,57 @@ $('.swiper-btn').click(function(){
   $(this).find('img').attr('src', './img/pause_btn.svg');
   return false;
   }
-})
+});
+});
 
-/* 슬라이더 구하기 */
-let swipe = swiper.realIndex;
-
-function calcSlide(){
-  swipe
+if (window.innerWidth > 1025) {
+$('#story').addClass('scroll');
+  //스크롤 감지 애니메이션
+$(window).scroll(function(){
+  let scrollPos = $(this).scrollTop();
+  if(scrollPos > 850){
+    $('#newsroom').addClass('scroll')
+  } 
+  if(scrollPos > 2000){
+    $('#call').addClass('scroll')
+    return false;
+  } 
 }
-
-let slide = setInterval(calcSlide, 50)
-
-console.log(slide)
-
-// for 문으로 구하기
-// for(i=0; i< slider.length; i++){}
-
-// 버튼 컨트롤
+);
+};
+//해상도가 1024미만, 768이상일 때
+if (window.innerWidth < 1025 && window.innerWidth > 768) {
+  //스크롤 감지 애니메이션
+$(window).scroll(function(){
+  let scrollPos = $(this).scrollTop();
+  if(scrollPos > 10){
+    $('#story').addClass('scroll');
+  } 
+  if(scrollPos > 1040){
+    $('#newsroom').addClass('scroll')
+  } 
+  if(scrollPos > 1700){
+    $('#call').addClass('scroll')
+    return false;
+  } 
+}
+);
+};
+//해상도가 768 미만일 때
+if (window.innerWidth < 769) {
+  //스크롤 감지 애니메이션
+$(window).scroll(function(){
+  let scrollPos = $(this).scrollTop();
+  if(scrollPos > 150){
+    $('#story').addClass('scroll');
+  } 
+  if(scrollPos > 1300){
+    $('#newsroom').addClass('scroll')
+  } 
+  if(scrollPos > 2800){
+    $('#call').addClass('scroll')
+    return false;
+  } 
+}
+);
+};

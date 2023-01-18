@@ -1,3 +1,4 @@
+$(document).ready(function(){
 function vh(v) {
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   return (v * h) / 100;
@@ -10,6 +11,15 @@ $('.f-btn').click(function(){
   }, 500);
   return false;
 })
+
+$('.f-qr-btn').click(function(){
+  $('.modal').stop().fadeIn();
+});
+
+$('#b-modal-close').click(function(){
+  $('.modal').stop().fadeOut();
+});
+
 
 /* 반응형 체크 */
 $(window).resize(function(){ 
@@ -63,7 +73,6 @@ $(window).scroll(function(){
   /* 메뉴 클릭 애니메이션 */
   let gnb = $('.h-bottom > nav > ul > li');
   gnb.click(function(){
-    console.log('eve')
     $(this).find('.lnb').slideDown().parent().siblings().find('.lnb').slideUp();
     });
 
@@ -71,12 +80,12 @@ $(window).scroll(function(){
     if($("#toggle").is(':checked') == true){
 
       $('header').addClass('h-header-on');
-      $('.h-bottom nav > ul > li, header .h-top ul > li').stop().delay(200).fadeIn();
+      $('.h-top > ul > li, .h-bottom nav ul > li').stop().delay(200).fadeIn();
       $(".h-btn01").addClass('h-on01').removeClass('h-btn01');
       $(".h-btn02").addClass('h-on02').removeClass('h-btn02');
       $(".h-btn03").addClass('h-on03').removeClass('h-btn03');
     }else{
-      $('header .h-top ul > li, .h-bottom nav > ul > li').stop().fadeOut();
+      $('.h-top > ul > li, .h-bottom nav ul > li').stop().fadeOut();
       $('header').removeClass('h-header-on');
       $(".h-on01").addClass('h-btn01').removeClass('h-on01');
       $(".h-on02").addClass('h-btn02').removeClass('h-on02');
@@ -85,3 +94,4 @@ $(window).scroll(function(){
     });
   }
 }).resize(); 
+});
